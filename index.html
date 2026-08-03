@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti</title>
+    <!-- Importamos una fuente cursiva y elegante desde Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #121212; /* Fondo oscuro estilo Spotify */
+            color: #ffffff;
+            font-family: "Caveat", cursive; /* Letra cursiva tipo carta manuscrita */
+            font-size: 1.6rem; /* Tamaño de fuente ideal para leer la carta */
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.4;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        h1 { 
+            color: #ff8da1; /* Título en rosa pastel */
+            font-family: "Great Vibes", cursive; /* Letra aún más estilizada para el saludo */
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0px 0px 10px rgba(255, 141, 161, 0.3);
+        }
+        
+        p { 
+            margin-bottom: 15px; 
+            color: #f3f3f3;
+            text-align: justify;
+        }
+        
+        h4 { 
+            color: #ff8da1; 
+            font-family: "Great Vibes", cursive;
+            font-size: 2.5rem;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .spotify-container {
+            margin-top: 35px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ----- EFECTO DE CORAZONES FLOTANTES ----- */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Se mantiene detrás del texto */
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 141, 161, 0.15); /* Corazones rosa semitransparentes */
+            animation: animate 20s linear infinite;
+            bottom: -150px;
+            transform: rotate(45deg);
+        }
+
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 50%;
+        }
+        .heart::before { top: -50%; left: 0; }
+        .heart::after { left: -50%; top: 0; }
+
+        /* Posiciones y tamaños aleatorios para los corazones flotantes */
+        .heart:nth-child(1){ left: 25%; width: 20px; height: 20px; animation-delay: 0s; }
+        .heart:nth-child(2){ left: 10%; width: 30px; height: 30px; animation-delay: 2s; animation-duration: 12s; }
+        .heart:nth-child(3){ left: 70%; width: 15px; height: 15px; animation-delay: 4s; }
+        .heart:nth-child(4){ left: 40%; width: 25px; height: 25px; animation-delay: 0s; animation-duration: 18s; }
+        .heart:nth-child(5){ left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+        .heart:nth-child(6){ left: 85%; width: 35px; height: 35px; animation-delay: 3s; }
+
+        @keyframes animate {
+            0%{
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100%{
+                transform: translateY(-1000px) rotate(95deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo de corazones -->
+    <div class="hearts-bg">
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+
+    <h1> Ti amo </h1>
+
+    <p>Holaa, miro te escribo esto porque es divertido saber hacer paginas web y de paso expresar... Te quier</p>
+    <p>A veces me mata no hablar contigo, y te escribiria pero en parte el orgullo no me deja por ponerme a</p>
+    <p>Ayer te escribi diciendote que tenia ganas, pero despues me puse a pensar y es complicado porque aunq</p>
+    <p>Ademas, a veces intento olvidarte y simplemente seguir con lo mio, incluso me intente refugiar en vid</p>
+    <p>Siempre he tenido el presentimiento de que hay otra persona, y tal vez haya tenido razón, pero a fin</p>
+    <p>Creo que eso es todo, perdoname por molestarte con esta estupidez. Ten una linda noche y descansa, m</p>
+
+    <h4> I love you </h4>
+
+    <!-- REPRODUCTOR DE SPOTIFY PERFECTAMENTE CONFIGURADO -->
+    <div class="spotify-container">
+        <iframe 
+            style="border-radius:12px" 
+            src="https://spotify.com" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+</body>
+</html>
